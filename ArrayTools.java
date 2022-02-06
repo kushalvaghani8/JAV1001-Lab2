@@ -10,9 +10,9 @@ import java.util.Scanner;  // Import the Scanner class
 
 
 public class ArrayTools{
- 
-  public static void main(String[] args) { 
-      
+
+  public static void main(String[] args) {
+
       choice();
 
       }
@@ -26,13 +26,14 @@ public static void choice(){
       System.out.println("2. Integer Array Average");
       System.out.println("3. Array Contains");
       System.out.println("4. Reverse Array");
+      System.out.println("5. Quit");
 
 Scanner scanner = new Scanner(System.in);
 int choices = scanner.nextInt();
 do {
 
   switch (choices){
-    
+
     case 1:
     System.out.println("You're in Caesar Cipher menu");
     caesarCipher();
@@ -40,9 +41,9 @@ do {
 
     case 2:
       System.out.println("You're in Array average menu");
-        average();  
+        average();
         break;
-        
+
     case 3:
         System.out.println("You're in Search Array menu");
         arrayContains();
@@ -52,6 +53,7 @@ do {
     revArray();
     break;
     case 5:
+      System.exit(0);
         return;
 
     default:
@@ -71,7 +73,7 @@ public static void caesarCipher(){
     int userKey = userInput.nextInt();
     char[] charArray = userValueEntered.toCharArray();
     String otherString = "";
-    
+
 
     System.out.print("The encrypted string is ");
     for (char c: charArray) {
@@ -89,20 +91,20 @@ public static void caesarCipher(){
     }
     System.out.println("\n");
   }
- 
+
 
     choice();
 }
 
 
 public static void average(int...infinite){
-  
+
   System.out.println("How many numbers you want to enter?");
-       
+
     Scanner userInput = new Scanner(System.in); {
-    int userValueEntered = userInput.nextInt(); 
+    int userValueEntered = userInput.nextInt();
      double[] userArray = new double[userValueEntered];
-    
+
      double total = 0;
     for(int i=0; i<userArray.length; i++){
     	System.out.print("Enter No."+(i+1)+": ");
@@ -113,7 +115,7 @@ public static void average(int...infinite){
     	total = total + userArray[i];
     }
     double average = total / userArray.length;
-    
+
     System.out.println("The average of an array is " + String.format("%.2f", average) + "\n");
     choice();
   }
@@ -122,12 +124,12 @@ public static void average(int...infinite){
     public static void revArray(int...infinite){
     System.out.println("How many numbers you want to enter?");
       Scanner userInput = new Scanner(System.in); {
-        int userValueEntered = userInput.nextInt(); 
+        int userValueEntered = userInput.nextInt();
          int[] userArray = new int[userValueEntered];
-    
+
         for(int i=0; i<userArray.length; i++){
           System.out.print("Enter No."+(i+1)+": ");
-          userArray[i] = userInput.nextInt(); 
+          userArray[i] = userInput.nextInt();
         }
         System.out.print("The array was: ");
         for(int i=0; i<userArray.length; i++){
@@ -140,7 +142,7 @@ public static void average(int...infinite){
         }
         System.out.println("\n");
         choice();
-      
+
 
     }
   }
@@ -148,12 +150,12 @@ public static void average(int...infinite){
   public static void arrayContains(int...infinite){
     System.out.println("How many numbers you want to enter?");
       Scanner userInput = new Scanner(System.in); {
-        int userValueEntered = userInput.nextInt(); 
+        int userValueEntered = userInput.nextInt();
          int[] userArray = new int[userValueEntered];
-    
+
         for(int i=0; i<userArray.length; i++){
           System.out.print("Enter No."+(i+1)+": ");
-          userArray[i] = userInput.nextInt(); 
+          userArray[i] = userInput.nextInt();
         }
         System.out.print("The array is: ");
         for(int i=0; i<userArray.length; i++){
@@ -174,5 +176,3 @@ public static void average(int...infinite){
     }
   }
 }
-
-
